@@ -16,4 +16,4 @@ COPY . .
 # # using node modules on the image
 # VOLUME ["/app/node_modules"]
 
-CMD ["npm", "start"]
+CMD ["nodemon", "app.js"]
