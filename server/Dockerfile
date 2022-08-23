@@ -3,8 +3,6 @@ FROM alpine
 # enter this directory
 WORKDIR /app
 
-RUN apk add npm
-
 COPY package.json .
 
 # install node modules
