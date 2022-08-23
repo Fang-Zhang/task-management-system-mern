@@ -10,11 +10,8 @@
 <ul>
   <li>MySQL Database</li>
   <li>ExpressJS and NodeJS</li>
-<<<<<<< HEAD
   <li>ReactJS</li>
-=======
   <li>ReactJS and Bootstrap</li>
->>>>>>> ed1105793675259f387ffa6980beb48638c9234d
 </ul>
 
 <h4>Assumptions:</h4>
@@ -29,7 +26,6 @@
   <li>Admin</li>
   <li>Normal User</li>
 </ul>
-<<<<<<< HEAD
 
 <h4>User Stories:</h4>
 <ul>
@@ -55,7 +51,6 @@
   <li>Password must be between 8 - 10 characters</li>
   <li>Password must comprise alphabets, numbers and special characters</li>
 </ul>
-=======
 
 <h4>User Stories:</h4>
 <ul>
@@ -90,5 +85,3 @@
     <i>Note: This will be implemented in Phase 2 of the project : Task Management Features</i>
   </li>
 </ul>
-
->>>>>>> ed1105793675259f387ffa6980beb48638c9234d
