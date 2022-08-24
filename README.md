@@ -1,6 +1,19 @@
-# Phase 1 Project : Basic User Management
+<h2>Problem Statement</h2>
+<ul>
+  <li>To build a Task Management System that emulates the Kanban approach.</li>
+  <li>To facilitate the order of daily tasks in Agile and DevOps teams.</li>
+  <li>Kanban board is an agile project management tool designed to help visualise work, limit work-in-progress, and maximise efficiency (or flow).</li>
+  <li>Kanban uses cards, columns and continuous improvement to help technology and service teams commit to the right amount of work and complete tasks on time.</li>
+</ul>
+<h2>Objectives of the Task Management System</h2>
+  <li>Identify and access control of an application.</li>
+  <li>State transition with pre & post actions to be triggered for a workflow which is usually implemented in projects. E.g., Case management, eSOP, etc. The pre & post actions contain the process/business rules, constraints for the respective business workflows.</li>
+  <li>REST API for system integration purposes.</li>
+  <li>Containerize the NodeJS application and API.</li>
+<hr>
+=================================================== Phase 1 Project : Basic User Management ===================================================
 
-<h3>Objectives of this Project:</h3>
+<h3>Objectives of Phase 1:</h3>
 <ul>
   <li>Apply the CRUD (create, read, update, delete) concept to the database related function and features to be developed.</li>
   <li>Develop the Frontend and Backend aspect of the basic user management system.</li>
@@ -77,6 +90,9 @@
   <li>Password must be between 8 - 10 characters</li>
   <li>Password must comprise alphabets, numbers and special characters</li>
 </ul>
+
+=================================================== Phase 2 Project : Task Management Features ===================================================
+
 
 <h4>Areas of Improvement</h4>
 <ul>
