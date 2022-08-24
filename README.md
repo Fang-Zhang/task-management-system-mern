@@ -6,10 +6,12 @@
       <li>Kanban uses cards, columns and continuous improvement to help technology and service teams commit to the right amount of work and complete tasks on time.</li>
     </ul>
     <h2>Objectives of the Task Management System</h2>
+    <ul>
     <li>Identify and access control of an application.</li>
     <li>State transition with pre & post actions to be triggered for a workflow which is usually implemented in projects. E.g., Case management, eSOP, etc. The pre & post actions contain the process/business rules, constraints for the respective business workflows.</li>
     <li>REST API for system integration purposes.</li>
     <li>Containerize the NodeJS application and API.</li>
+    </ul>
     <hr />
 ======================= Phase 1 Project : Basic User Management =======================
     <h3>Objectives of Phase 1:</h3>
