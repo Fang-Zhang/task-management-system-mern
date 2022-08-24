@@ -1,0 +1,30 @@
+# docker compose version
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:5.7
+    volumes:
+      # named volume (path obtained from MySQL Docker Hub)
+      - data:/var/lib/mysql
+    container_name: mysql_container
+    env_file:
+      - ./server/env/mysql.env
+
+  backend:
+    # building the image
+    build: ./server
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    container_name: backend_container
+    env_file:
+      - ./server/env/backend.env
+    depends_on:
+      - mysql
+
+# syntax for named volumes
+volumes:
+  data:

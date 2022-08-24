@@ -1,8 +1,10 @@
 # Base Image
-FROM node
+FROM alpine
 
 # Define working directory of a Docker container
 WORKDIR /app
+
+RUN apk add npm
 
 # Optimisation step for running the Dockerfile
 # If no changes in package.json, `npm install` step is skipped
@@ -21,4 +23,4 @@ COPY . .
 # VOLUME ["/app/node_modules"]
 
 # Command to run app.js (NodeJS)
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]

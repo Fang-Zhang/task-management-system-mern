@@ -89,14 +89,14 @@
     </ul>
 
 ======================= Phase 2 Project : Task Management Features =======================
-    <h3>Objectives of Phase 2:</h3>
-    <ul>
-      <li>Understand the workflow needed to implement the lifecycle of a "task" which is akin to any case management related system.</li>
-      <li>Understand the custom fields that are required to be captured as data to support the "task".</li>
-      <li>Understand the different pages which the custom fields shall be associated to as the interface to the system.</li>
-      <li>Understand how to implement the Task Management Features related to the specific state of the workflow in terms of acccess management, pre-validation, and post-action needed for the state transition to occur. (across multiple SQL tables for CRUD transactions).</li>
-      <li>User experience (UX) is important to ensure the ease of use and efficiency factor.</li>
-    </ul>
+<h3>Objectives of Phase 2:</h3>
+<ul>
+<li>Understand the workflow needed to implement the lifecycle of a "task" which is akin to any case management related system.</li>
+<li>Understand the custom fields that are required to be captured as data to support the "task".</li>
+<li>Understand the different pages which the custom fields shall be associated to as the interface to the system.</li>
+<li>Understand how to implement the Task Management Features related to the specific state of the workflow in terms of acccess management, pre-validation, and post-action needed for the state transition to occur. (across multiple SQL tables for CRUD transactions).</li>
+<li>User experience (UX) is important to ensure the ease of use and efficiency factor.</li>
+</ul>
 
    <h4>Assumptions</h4>
     <ul>
@@ -194,6 +194,7 @@
     </ul>
 
 ==================== Phase 3 Project: Implement REST API for TMS ====================
+
    <h3>Objectives of Phase 3:</h3>
     <ul>
       <li>Understand how REST API operates from the security and assessment aspect.</li>
@@ -209,6 +210,7 @@
     </ul>
 
 ======================= Phase 4 Project: Containerizing API =======================
+
    <h4>Objectives of Phase 4:</h4>
     <ul>
       <li>Understand how to containerize the API using Dockerfile and relevant considerations.</li>
@@ -219,6 +221,7 @@
    <h4>Areas of Improvement</h4>
     <ul>
       <li>Implement more advanced React Hooks</li>
+      <li>Editable Table in Phase 1</li>
       <li>
         Add state dependencies in useEffect to minimise refreshing of the browser.
         <i>Note: This will be implemented in Phase 2 of the project : Task Management Features</i>
