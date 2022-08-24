@@ -1,6 +1,6 @@
 <h2>Problem Statement</h2>
     <ul>
-      <li>To build a Task Management System that emulates the Kanban approach.</li>
+      <li>To build a Task Management System (TMS) that emulates the Kanban approach.</li>
       <li>To facilitate the order of daily tasks in Agile and DevOps teams.</li>
       <li>Kanban board is an agile project management tool designed to help visualise work, limit work-in-progress, and maximise efficiency (or flow).</li>
       <li>Kanban uses cards, columns and continuous improvement to help technology and service teams commit to the right amount of work and complete tasks on time.</li>
@@ -13,7 +13,7 @@
     <li>Containerize the NodeJS application and API.</li>
     </ul>
     <hr />
-======================= Phase 1 Project : Basic User Management =======================
+======================== Phase 1 Project : Basic User Management ========================
     <h3>Objectives of Phase 1:</h3>
     <ul>
       <li>Apply the CRUD (create, read, update, delete) concept to the database related function and features to be developed.</li>
@@ -193,7 +193,7 @@
       </li>
     </ul>
 
-======================= Phase 3 Project: Implement REST API for TMS =======================
+==================== Phase 3 Project: Implement REST API for TMS ====================
    <h3>Objectives of Phase 3:</h3>
     <ul>
       <li>Understand how REST API operates from the security and assessment aspect.</li>
