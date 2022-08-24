@@ -11,7 +11,7 @@
     <li>REST API for system integration purposes.</li>
     <li>Containerize the NodeJS application and API.</li>
     <hr />
-================================= Phase 1 Project : Basic User Management =================================
+======================= Phase 1 Project : Basic User Management =======================
     <h3>Objectives of Phase 1:</h3>
     <ul>
       <li>Apply the CRUD (create, read, update, delete) concept to the database related function and features to be developed.</li>
@@ -86,7 +86,7 @@
       <li>Password must comprise alphabets, numbers and special characters</li>
     </ul>
 
-================================= Phase 2 Project : Task Management Features =================================
+======================= Phase 2 Project : Task Management Features =======================
     <h3>Objectives of Phase 2:</h3>
     <ul>
       <li>Understand the workflow needed to implement the lifecycle of a "task" which is akin to any case management related system.</li>
@@ -191,7 +191,7 @@
       </li>
     </ul>
 
-================================= Phase 3 Project: Implement REST API for TMS =================================
+======================= Phase 3 Project: Implement REST API for TMS =======================
    <h3>Objectives of Phase 3:</h3>
     <ul>
       <li>Understand how REST API operates from the security and assessment aspect.</li>
@@ -206,14 +206,14 @@
       <li>[POST] Approve a task from "Doing" to "Done" state. (method name = PromoteTaskToDone)</li>
     </ul>
 
-================================= Phase 4 Project: Containerizing API =================================
+======================= Phase 4 Project: Containerizing API =======================
    <h4>Objectives of Phase 4:</h4>
     <ul>
       <li>Understand how to containerize the API using Dockerfile and relevant considerations.</li>
       <li>Understand how to reduce the size of the container image using a streamlined OS without affecting the function of the delivered API.</li>
     </ul>
     
-================================= Areas of Improvement =================================
+======================= Areas of Improvement =======================
    <h4>Areas of Improvement</h4>
     <ul>
       <li>Implement more advanced React Hooks</li>
