@@ -13,7 +13,7 @@ const send_kanban_plan_info = (req, res, next) => {
 
 const send_kanban_application_info = (req, res, next) => {
   // const select_sql_application = `SELECT * FROM application where App_Acronym = "${req.params.appAcronym}"`;
-  const select_sql_application = `SELECT App_Description, App_Rnumber, DATE_FORMAT(App_startDate, "%d-%m-%Y") as startDate, DATE_FORMAT(App_endDate, "%d-%m-%Y") as endDate, App_permit_Create, App_permit_Open, App_permit_toDoList, App_permit_Doing, App_permit_Done FROM Application where App_Acronym = "${req.params.appAcronym}"`;
+  const select_sql_application = `SELECT App_Description, App_Rnumber, DATE_FORMAT(App_startDate, "%d-%m-%Y") as startDate, DATE_FORMAT(App_endDate, "%d-%m-%Y") as endDate, App_permit_Create, App_permit_Open, App_permit_toDoList, App_permit_Doing, App_permit_Done FROM application where App_Acronym = "${req.params.appAcronym}"`;
   con.query(select_sql_application, function (err, result) {
     if (err) throw err;
     else {
@@ -90,7 +90,7 @@ const create_task = (req, res, next) => {
                   if (err) throw err;
                   // There are no tasks, assign the current App_Rnumber
                   else if (result.length === 0) {
-                    const select_sql_application = `SELECT * FROM Application WHERE App_Acronym = ?`;
+                    const select_sql_application = `SELECT * FROM application WHERE App_Acronym = ?`;
                     con.query(select_sql_application, [appAcronym], function (err, result) {
                       if (err) throw err;
                       else {
@@ -159,7 +159,7 @@ const create_task = (req, res, next) => {
                     });
                   } else {
                     // if there is already a task assigned to an Rnumber (need to + 1)
-                    const select_sql_application = `SELECT * FROM Application WHERE App_Acronym = ?`;
+                    const select_sql_application = `SELECT * FROM application WHERE App_Acronym = ?`;
                     con.query(select_sql_application, [appAcronym], function (err, result) {
                       if (err) throw err;
                       let currentAppRnumber = result[0].App_Rnumber;
@@ -167,7 +167,7 @@ const create_task = (req, res, next) => {
                       let Task_id = appAcronym + "_" + newAppRnumber;
 
                       // update latest Rnumber for App_Rnumber in Application
-                      const update_sql_application = `UPDATE Application SET App_Rnumber = ? WHERE App_Acronym = ?`;
+                      const update_sql_application = `UPDATE application SET App_Rnumber = ? WHERE App_Acronym = ?`;
                       con.query(update_sql_application, [newAppRnumber, appAcronym], function (err, result) {
                         if (err) throw err;
                         else {
@@ -244,7 +244,7 @@ const create_task = (req, res, next) => {
               if (err) throw err;
               // There are no tasks, assign the current App_Rnumber
               else if (result.length === 0) {
-                const select_sql_application = `SELECT * FROM Application WHERE App_Acronym = ?`;
+                const select_sql_application = `SELECT * FROM application WHERE App_Acronym = ?`;
                 con.query(select_sql_application, [appAcronym], function (err, result) {
                   if (err) throw err;
                   else {
@@ -313,7 +313,7 @@ const create_task = (req, res, next) => {
                 });
               } else {
                 // if there is already a task assigned to an Rnumber (need to + 1)
-                const select_sql_application = `SELECT * FROM Application WHERE App_Acronym = ?`;
+                const select_sql_application = `SELECT * FROM application WHERE App_Acronym = ?`;
                 con.query(select_sql_application, [appAcronym], function (err, result) {
                   if (err) throw err;
                   let currentAppRnumber = result[0].App_Rnumber;
@@ -321,7 +321,7 @@ const create_task = (req, res, next) => {
                   let Task_id = appAcronym + "_" + newAppRnumber;
 
                   // update latest Rnumber for App_Rnumber in Application
-                  const update_sql_application = `UPDATE Application SET App_Rnumber = ? WHERE App_Acronym = ?`;
+                  const update_sql_application = `UPDATE application SET App_Rnumber = ? WHERE App_Acronym = ?`;
                   con.query(update_sql_application, [newAppRnumber, appAcronym], function (err, result) {
                     if (err) throw err;
                     else {
@@ -405,7 +405,7 @@ const create_task = (req, res, next) => {
                   if (err) throw err;
                   // There are no tasks, assign the current App_Rnumber
                   else if (result.length === 0) {
-                    const select_sql_application = `SELECT * FROM Application WHERE App_Acronym = ?`;
+                    const select_sql_application = `SELECT * FROM application WHERE App_Acronym = ?`;
                     con.query(select_sql_application, [appAcronym], function (err, result) {
                       if (err) throw err;
                       else {
@@ -474,7 +474,7 @@ const create_task = (req, res, next) => {
                     });
                   } else {
                     // if there is already a task assigned to an Rnumber (need to + 1)
-                    const select_sql_application = `SELECT * FROM Application WHERE App_Acronym = ?`;
+                    const select_sql_application = `SELECT * FROM application WHERE App_Acronym = ?`;
                     con.query(select_sql_application, [appAcronym], function (err, result) {
                       if (err) throw err;
                       let currentAppRnumber = result[0].App_Rnumber;
@@ -482,7 +482,7 @@ const create_task = (req, res, next) => {
                       let Task_id = appAcronym + "_" + newAppRnumber;
 
                       // update latest Rnumber for App_Rnumber in Application
-                      const update_sql_application = `UPDATE Application SET App_Rnumber = ? WHERE App_Acronym = ?`;
+                      const update_sql_application = `UPDATE application SET App_Rnumber = ? WHERE App_Acronym = ?`;
                       con.query(update_sql_application, [newAppRnumber, appAcronym], function (err, result) {
                         if (err) throw err;
                         else {
@@ -559,7 +559,7 @@ const create_task = (req, res, next) => {
               if (err) throw err;
               // There are no tasks, assign the current App_Rnumber
               else if (result.length === 0) {
-                const select_sql_application = `SELECT * FROM Application WHERE App_Acronym = ?`;
+                const select_sql_application = `SELECT * FROM application WHERE App_Acronym = ?`;
                 con.query(select_sql_application, [appAcronym], function (err, result) {
                   if (err) throw err;
                   else {
@@ -628,7 +628,7 @@ const create_task = (req, res, next) => {
                 });
               } else {
                 // if there is already a task assigned to an Rnumber (need to + 1)
-                const select_sql_application = `SELECT * FROM Application WHERE App_Acronym = ?`;
+                const select_sql_application = `SELECT * FROM application WHERE App_Acronym = ?`;
                 con.query(select_sql_application, [appAcronym], function (err, result) {
                   if (err) throw err;
                   let currentAppRnumber = result[0].App_Rnumber;
@@ -636,7 +636,7 @@ const create_task = (req, res, next) => {
                   let Task_id = appAcronym + "_" + newAppRnumber;
 
                   // update latest Rnumber for App_Rnumber in Application
-                  const update_sql_application = `UPDATE Application SET App_Rnumber = ? WHERE App_Acronym = ?`;
+                  const update_sql_application = `UPDATE application SET App_Rnumber = ? WHERE App_Acronym = ?`;
                   con.query(update_sql_application, [newAppRnumber, appAcronym], function (err, result) {
                     if (err) throw err;
                     else {
@@ -940,7 +940,7 @@ const get_specific_task = (req, res, next) => {
 
 const specific_app_info = (req, res, next) => {
   let App_Acronym = req.body.appAcronym;
-  const select_specific_app = `SELECT * FROM Application WHERE App_Acronym = ?`;
+  const select_specific_app = `SELECT * FROM application WHERE App_Acronym = ?`;
   con.query(select_specific_app, [App_Acronym], function (err, result) {
     if (err) throw err;
     // if (App_permit_Open == "") {

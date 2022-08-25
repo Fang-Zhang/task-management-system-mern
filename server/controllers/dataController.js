@@ -8,7 +8,7 @@ const send_accounts_info = (req, res, next) => {
 };
 
 const send_group_info = (req, res, next) => {
-  con.query("SELECT * FROM groupDescription", function (err, result) {
+  con.query("SELECT * FROM groupdescription", function (err, result) {
     if (err) throw err;
     res.send(result);
   });

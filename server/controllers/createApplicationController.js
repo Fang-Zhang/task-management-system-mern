@@ -9,7 +9,7 @@ const add_application = (req, res, next) => {
 
   // Check if App Acronym exists
   if (App_Acronym) {
-    select_sql_application_Acronym = "SELECT * FROM Application WHERE App_Acronym = ?";
+    select_sql_application_Acronym = "SELECT * FROM application WHERE App_Acronym = ?";
     con.query(select_sql_application_Acronym, [App_Acronym], function (err, result) {
       if (err) throw err;
       else if (result.length > 0) {
@@ -40,7 +40,7 @@ const add_application = (req, res, next) => {
               if (App_permit_Done == "") {
                 App_permit_Done = null;
               }
-              insert_sql_application = "INSERT INTO Application VALUES (?,?,?,?,?,?,?,?,?,?,now())";
+              insert_sql_application = "INSERT INTO application VALUES (?,?,?,?,?,?,?,?,?,?,now())";
               con.query(insert_sql_application, [App_Acronym, App_Description, App_Rnumber, App_startDate, App_endDate, App_permit_Create, App_permit_Open, App_permit_toDoList, App_permit_Doing, App_permit_Done], function (err, result) {
                 if (err) throw err;
                 res.send(result);
@@ -62,7 +62,7 @@ const add_application = (req, res, next) => {
 };
 
 const add_application_get_usergroup = (req, res, next) => {
-  check_sql_groups = "SELECT * FROM groupDescription";
+  check_sql_groups = "SELECT * FROM groupdescription";
   con.query(check_sql_groups, function (err, result) {
     if (err) throw err;
     res.send(result);

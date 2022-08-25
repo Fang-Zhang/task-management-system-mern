@@ -7,7 +7,7 @@ const create_group = (req, res, next) => {
 
   if (groupName) {
     groupTrim = groupName.trim();
-    const insert_into_groupDes = "INSERT INTO groupDescription VALUES (?,?)";
+    const insert_into_groupDes = "INSERT INTO groupdescription VALUES (?,?)";
     con.query(insert_into_groupDes, [groupTrim, groupDescription], function (err, result) {
       if (err) {
         return next(new ErrorHandler(groupTrim + " UserGroup already exists in database!", 404));

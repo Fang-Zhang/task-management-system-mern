@@ -10,13 +10,15 @@ services:
     volumes:
       # named volume (path obtained from MySQL Docker Hub)
       - data:/var/lib/mysql
-
       # init.sql file
+      - ./server:/docker-entrypoint-initdb.d
     container_name: mysql_container
     env_file:
       - ./server/env/mysql.env
+    # healthcheck tells Docker if the state of the container is normal
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      # checks every 20 seconds
       timeout: 20s
       retries: 10
 
@@ -30,16 +32,29 @@ services:
       - ./server:/app
       - /app/node_modules
     container_name: backend_container
-    # environment:
-    #   API_PORT: 3002
     env_file:
       - ./server/env/backend.env
+    # depends_on sets the order in which services must start and stop.
     depends_on:
       mysql:
         condition: service_healthy
-
     links:
       - mysql
+
+  frontend:
+    restart: always
+    build: ./client
+    container_name: frontend_container
+    ports:
+      - "3000:3000"
+    volumes:
+      # bind mount
+      - ./client/src:/app/src
+    # interactive mode (-it)
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
 
 # syntax for named volumes
 volumes:

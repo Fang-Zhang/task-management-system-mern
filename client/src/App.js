@@ -14,7 +14,7 @@ import AdminCreateUserGroup from "./components/AdminCreateUserGroup";
 import KanbanBoard from "./components/KanbanBoard";
 
 // Beginning portion of url for all REQUEST:
-Axios.defaults.baseURL = "http://localhost:3000";
+// Axios.defaults.baseURL = "http://backend:3000";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Boolean(sessionStorage.getItem("stenggUsername")));
@@ -33,6 +33,7 @@ function App() {
         <Route path="/AdminDatabaseTable" element={<AdminDatabaseTable />} />
         <Route path="/AdminUpdateUserGroup" element={<AdminUpdateUserGroup />} />
         <Route path="/homepage/kanban-board/:appAcronym" element={<KanbanBoard />} />
+        <Route path="*" element={<div>Page 404! There's nothing here!</div>} />
       </Routes>
     </BrowserRouter>
   );

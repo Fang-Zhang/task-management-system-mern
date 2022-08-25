@@ -48,6 +48,7 @@ function AppPlan(props) {
 
   useEffect(() => {
     checkgroup();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleClose = () => {
@@ -99,6 +100,7 @@ function AppPlan(props) {
 
   useEffect(() => {
     getPlanInfo();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [show]);
 
   // Today's date

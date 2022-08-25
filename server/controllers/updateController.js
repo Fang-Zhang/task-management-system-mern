@@ -86,11 +86,11 @@ const update_user = (req, res, next) => {
                                 continue;
                               }
                               let compositeGroup = checkGroupArray[i];
-                              const check_sql_usergroup = "SELECT * FROM userGroup WHERE username = ? AND groupName = ?";
+                              const check_sql_usergroup = "SELECT * FROM usergroup WHERE username = ? AND groupName = ?";
                               con.query(check_sql_usergroup, [trimUsername, compositeGroup], function (err, result) {
                                 if (err) throw err;
                                 else if (result.length == 0) {
-                                  const insert_sql_usergroup = "INSERT INTO userGroup VALUES (?,?)";
+                                  const insert_sql_usergroup = "INSERT INTO usergroup VALUES (?,?)";
                                   con.query(insert_sql_usergroup, [trimUsername, compositeGroup], function (err, result) {
                                     if (err) throw err;
                                   });
@@ -158,11 +158,11 @@ const update_user = (req, res, next) => {
                             continue;
                           }
                           let compositeGroup = checkGroupArray[i];
-                          const check_sql_usergroup = "SELECT * FROM userGroup WHERE username = ? AND groupName = ?";
+                          const check_sql_usergroup = "SELECT * FROM usergroup WHERE username = ? AND groupName = ?";
                           con.query(check_sql_usergroup, [trimUsername, compositeGroup], function (err, result) {
                             if (err) throw err;
                             else if (result.length == 0) {
-                              const insert_sql_usergroup = "INSERT INTO userGroup VALUES (?,?)";
+                              const insert_sql_usergroup = "INSERT INTO usergroup VALUES (?,?)";
                               con.query(insert_sql_usergroup, [trimUsername, compositeGroup], function (err, result) {
                                 if (err) throw err;
                               });
@@ -231,11 +231,11 @@ const update_user = (req, res, next) => {
                               continue;
                             }
                             let compositeGroup = checkGroupArray[i];
-                            const check_sql_usergroup = "SELECT * FROM userGroup WHERE username = ? AND groupName = ?";
+                            const check_sql_usergroup = "SELECT * FROM usergroup WHERE username = ? AND groupName = ?";
                             con.query(check_sql_usergroup, [trimUsername, compositeGroup], function (err, result) {
                               if (err) throw err;
                               else if (result.length == 0) {
-                                const insert_sql_usergroup = "INSERT INTO userGroup VALUES (?,?)";
+                                const insert_sql_usergroup = "INSERT INTO usergroup VALUES (?,?)";
                                 con.query(insert_sql_usergroup, [trimUsername, compositeGroup], function (err, result) {
                                   if (err) throw err;
                                 });
@@ -300,11 +300,11 @@ const update_user = (req, res, next) => {
                           continue;
                         }
                         let compositeGroup = checkGroupArray[i];
-                        const check_sql_usergroup = "SELECT * FROM userGroup WHERE username = ? AND groupName = ?";
+                        const check_sql_usergroup = "SELECT * FROM usergroup WHERE username = ? AND groupName = ?";
                         con.query(check_sql_usergroup, [trimUsername, compositeGroup], function (err, result) {
                           if (err) throw err;
                           else if (result.length == 0) {
-                            const insert_sql_usergroup = "INSERT INTO userGroup VALUES (?,?)";
+                            const insert_sql_usergroup = "INSERT INTO usergroup VALUES (?,?)";
                             con.query(insert_sql_usergroup, [trimUsername, compositeGroup], function (err, result) {
                               if (err) throw err;
                             });
@@ -326,7 +326,7 @@ const update_user = (req, res, next) => {
 };
 
 const get_group_update = (req, res, next) => {
-  check_sql_groups = "SELECT * FROM groupDescription";
+  check_sql_groups = "SELECT * FROM groupdescription";
   con.query(check_sql_groups, function (err, result) {
     if (err) throw err;
     res.send(result);

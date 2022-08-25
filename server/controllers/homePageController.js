@@ -39,7 +39,7 @@ const checkgroup = (req, res, next) => {
 };
 
 const send_application_info = (req, res, next) => {
-  check_sql_application = `SELECT App_Acronym, App_Description, App_Rnumber, DATE_FORMAT(App_startDate, "%d-%m-%Y") as App_startDate, DATE_FORMAT(App_endDate, "%d-%m-%Y") as App_endDate, App_permit_Open, App_permit_toDoList, App_permit_Doing, App_permit_Done FROM Application`;
+  check_sql_application = `SELECT App_Acronym, App_Description, App_Rnumber, DATE_FORMAT(App_startDate, "%d-%m-%Y") as App_startDate, DATE_FORMAT(App_endDate, "%d-%m-%Y") as App_endDate, App_permit_Open, App_permit_toDoList, App_permit_Doing, App_permit_Done FROM application`;
   con.query(check_sql_application, function (err, result) {
     if (err) throw err;
     else {
@@ -51,7 +51,7 @@ const send_application_info = (req, res, next) => {
 // Send back current application information
 const post_specific_application_info = (req, res, next) => {
   let App_Acronym = req.body.appAcronym;
-  const check_sql_application = `SELECT App_Description, App_Rnumber, DATE_FORMAT(App_startDate, "%Y-%m-%d") as startDate, DATE_FORMAT(App_endDate, "%Y-%m-%d") as endDate, App_permit_Create, App_permit_Open, App_permit_toDoList, App_permit_Doing, App_permit_Done FROM Application WHERE App_Acronym = ?`;
+  const check_sql_application = `SELECT App_Description, App_Rnumber, DATE_FORMAT(App_startDate, "%Y-%m-%d") as startDate, DATE_FORMAT(App_endDate, "%Y-%m-%d") as endDate, App_permit_Create, App_permit_Open, App_permit_toDoList, App_permit_Doing, App_permit_Done FROM application WHERE App_Acronym = ?`;
   con.query(check_sql_application, [App_Acronym], function (err, result) {
     if (err) throw err;
     else if (App_Acronym) {

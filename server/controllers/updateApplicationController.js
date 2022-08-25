@@ -8,14 +8,14 @@ const update_application = (req, res, next) => {
 
   // Checking if App_Acronym already exists in database
   if (App_Acronym) {
-    const select_sql_application_Acronym = "SELECT * FROM Application WHERE App_Acronym = ?";
+    const select_sql_application_Acronym = "SELECT * FROM application WHERE App_Acronym = ?";
     con.query(select_sql_application_Acronym, [App_Acronym], function (err, result) {
       if (err) throw err;
       else if (result.length == 0) {
         return next(new ErrorHandler("This application does not exist. Please try again."));
       } else {
         // Handling blank entries in req.body
-        const select_sql_application_blank = "SELECT * FROM Application WHERE App_Acronym = ?";
+        const select_sql_application_blank = "SELECT * FROM application WHERE App_Acronym = ?";
         con.query(select_sql_application_blank, [App_Acronym], function (err, result) {
           if (err) throw err;
           else {

@@ -54,7 +54,7 @@ const remove_userGroup = (req, res, next) => {
 };
 
 const get_group_update_removeController = (req, res, next) => {
-  check_sql_groups = "SELECT * FROM groupDescription";
+  check_sql_groups = "SELECT * FROM groupdescription";
   con.query(check_sql_groups, function (err, result) {
     if (err) throw err;
     res.send(result);

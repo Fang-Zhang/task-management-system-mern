@@ -47,7 +47,7 @@ const add_user = (req, res, next) => {
                         } else {
                           let groupArray = groupString.split(",");
                           for (let i = 0; i < groupArray.length; i++) {
-                            const into_sql_usergroup = "INSERT INTO userGroup (username, groupName) VALUES (?,?)";
+                            const into_sql_usergroup = "INSERT INTO usergroup (username, groupName) VALUES (?,?)";
                             con.query(into_sql_usergroup, [username, groupArray[i]], function (err, result) {
                               if (err) throw err;
                             });
@@ -63,7 +63,7 @@ const add_user = (req, res, next) => {
 
                 const hash = await bcrypt.hash(password, 10);
 
-                const into_sql_accounts = "INSERT INTO accounts (username, password, email, groupName, isActive) VALUES (?,?,?,?,?)";
+                const into_sql_accounts = "INSERT INTO accounts (username, password, email, groupname, isActive) VALUES (?,?,?,?,?)";
                 con.query(into_sql_accounts, [username, hash, blankEmail, groupString, isActive], function (err, result) {
                   if (err) throw err;
                   else {
@@ -73,7 +73,7 @@ const add_user = (req, res, next) => {
                     } else {
                       let groupArray = groupString.split(",");
                       for (let i = 0; i < groupArray.length; i++) {
-                        const into_sql_usergroup = "INSERT INTO userGroup (username, groupName) VALUES (?,?)";
+                        const into_sql_usergroup = "INSERT INTO usergroup (username, groupName) VALUES (?,?)";
                         con.query(into_sql_usergroup, [username, groupArray[i]], function (err, result) {
                           if (err) throw err;
                         });
@@ -95,7 +95,7 @@ const add_user = (req, res, next) => {
 };
 
 const get_group = (req, res, next) => {
-  check_sql_groups = "SELECT * FROM groupDescription";
+  check_sql_groups = "SELECT * FROM groupdescription";
   con.query(check_sql_groups, function (err, result) {
     if (err) throw err;
     res.send(result);
