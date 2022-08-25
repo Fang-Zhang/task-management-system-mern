@@ -22,6 +22,7 @@ RUN addgroup -S nonroot && adduser -S default -G nonroot
 
 # CREATE A DEFAULT USER IN GROUP
 # RUN adduser -S default -g nonroot
+RUN apk update
 
 # START DOCKER AS THIS USER
 USER default
