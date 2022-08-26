@@ -89,6 +89,7 @@
     </ul>
 
 ======================= Phase 2 Project : Task Management Features =======================
+
 <h3>Objectives of Phase 2:</h3>
 <ul>
 <li>Understand the workflow needed to implement the lifecycle of a "task" which is akin to any case management related system.</li>
@@ -216,6 +217,19 @@
       <li>Understand how to containerize the API using Dockerfile and relevant considerations.</li>
       <li>Understand how to reduce the size of the container image using a streamlined OS without affecting the function of the delivered API.</li>
     </ul>
+
+  <h4>Phase 4 Tasks</h4>
+  <ul>
+    <li>Created a docker-compose file to connect the frontend, backend and server in the same network.
+    </li>
+    <li>Assuming the user has MySQL workbench installed on the localhost machine, to run the backend API on POSTMAN, run the following commands:
+      <ul>
+        <li>Build the Node Image: <code>docker build -t backend .</code></li>
+        <li>Start the backend_container: <code>docker run -p 3002:3002 -d --rm --name backend_container backend:latest</code></li>
+        <li>Check backend_container logs (optional): <code>docker logs backend_container</li>
+      </ul>
+    </li>
+  </ul>
     
 ======================= Areas of Improvement =======================
    <h4>Areas of Improvement</h4>

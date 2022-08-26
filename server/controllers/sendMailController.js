@@ -51,41 +51,6 @@ const send_email_project_lead = async (req, res, next) => {
       });
     }
   });
-
-  //   const select_sql_task = `SELECT * FROM task WHERE Task_app_Acronym = ?`;
-  //   con.query(select_sql_task, [appAcronym], function (err, result) {
-  //     if (err) throw err;
-  //     else {
-  //       const select_sql_accounts = `SELECT * FROM accounts WHERE username = ?`;
-  //       con.query(select_sql_accounts, [Task_creator], function (err, result) {
-  //         if (err) throw err;
-  //         else {
-  //           let PM_email = result[0].email;
-
-  //           const select_sql_accounts_email = `SELECT * FROM accounts WHERE username = ?`;
-  //           con.query(select_sql_accounts_email, [username], async function (err, result) {
-  //             if (err) throw err;
-  //             else {
-  //               let TM_email = result[0].email;
-
-  //               await transport.sendMail({
-  //                 from: `${PM_email}`,
-  //                 to: `${TM_email}`,
-  //                 subject: `Done Task: ${taskName} by ${username}`,
-  //                 html: `<div><h2>Done Task From <b>${username}</b></h2>
-  //                 <p>Dear Sir/Madam, </p>
-  //                 <p>My username is <b>${username}</b></p>
-  //                 <p>Application: <b>${appAcronym}</b></p>
-  //                 <p>I have completed the task <b>${taskName}</b> and it is <b>Done</b>. Please check it. Thank you!!</p>
-  //                 <p>Yours sincerely, <br>${username}</p>
-  //                 </div>`
-  //               });
-  //             }
-  //           });
-  //         }
-  //       });
-  //     }
-  //   });
 };
 
 module.exports = { send_email_project_lead };

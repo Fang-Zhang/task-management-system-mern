@@ -79,14 +79,39 @@ CREATE TABLE IF NOT EXISTS tasknotes (
     Task_name VARCHAR(100) NOT NULL,
     Task_notes VARCHAR(255) NOT NULL,
     updated_date DATETIME NOT NULL DEFAULT NOW(),
+    Task_owner VARCHAR(100) NOT NULL,
+    Task_state VARCHAR(50) NOT NULL,
     PRIMARY KEY (updated_date),
     FOREIGN KEY (Task_name) REFERENCES task (Task_name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO groupdescription VALUES ("Admin", "");
+INSERT INTO groupdescription VALUES ("Project Lead", "");
+INSERT INTO groupdescription VALUES ("Project Manager", "");
+INSERT INTO groupdescription VALUES ("Team Member", "");
 
 -- Create Default Accounts
 -- UserGroups: Admin, Project Lead, Project Manager, Team Member
 -- Password is "Password0!"
 INSERT INTO accounts VALUES ("admin", "$2a$10$hQyX78Qdrd.3Upa8hDgjKO2zqKOOEFB8y6h1jHr8pxngu0ge4Uv8i", "admin@email.com", "Admin","Active");
+INSERT INTO accounts VALUES ("projectlead", "$2a$10$hQyX78Qdrd.3Upa8hDgjKO2zqKOOEFB8y6h1jHr8pxngu0ge4Uv8i", "projectlead@email.com", "Project Lead","Active");
+INSERT INTO accounts VALUES ("projectmanager", "$2a$10$hQyX78Qdrd.3Upa8hDgjKO2zqKOOEFB8y6h1jHr8pxngu0ge4Uv8i", "projectmanager@email.com", "Project Manager","Active");
+INSERT INTO accounts VALUES ("teammember", "$2a$10$hQyX78Qdrd.3Upa8hDgjKO2zqKOOEFB8y6h1jHr8pxngu0ge4Uv8i", "teammember@email.com", "Team Member","Active");
 
+INSERT INTO usergroup VALUES ("admin", "Admin");
+INSERT INTO usergroup VALUES ("projectlead", "Project Lead");
+INSERT INTO usergroup VALUES ("projectmanager", "Project Manager");
+INSERT INTO usergroup VALUES ("teammember", "Team Member");
 
+INSERT INTO application (App_Acronym, App_Description, App_Rnumber, App_permit_Create, App_permit_Open, App_permit_toDoList, App_permit_Doing, App_permit_Done, created_date) VALUES ("App 1", "This is my first application", 1, "Project Lead", "Project Manager", "Team Member", "Team Member", "Project Lead", now());
+
+-- Create Non Root User With Limited Permissions
+USE mysql;
+CREATE USER 'default'@'%' IDENTIFIED BY 'default123';
+GRANT INSERT, SELECT, UPDATE on nodelogin2.* TO 'default'@'%';
+
+-- When we grant some privileges for a user, running this command flush privileges will reload
+-- the grant tables in the mysql database enabling the changes to take effect without reloading
+-- or restarting mysql service.
+FLUSH PRIVILEGES;
 
