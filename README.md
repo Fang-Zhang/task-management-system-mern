@@ -196,18 +196,25 @@
 
 ==================== Phase 3 Project: Implement REST API for TMS ====================
 
-   <h3>Objectives of Phase 3:</h3>
+<h3>Objectives of Phase 3:</h3>
     <ul>
       <li>Understand how REST API operates from the security and assessment aspect.</li>
       <li>Understand how REST API can be designed to be scalable.</li>
       <li>Utilising POSTMAN to perform GET and POST requests.</li>
     </ul>
 
-   <h4>CRUD Transactions</h4>
+<h4>CRUD Transactions</h4>
     <ul>
       <li>[POST] Create a new task. (method name = CreateTask)</li>
       <li>[GET] Retrieve tasks in a particular state. (method name = GetTaskbyState)</li>
       <li>[POST] Approve a task from "Doing" to "Done" state. (method name = PromoteTaskToDone)</li>
+    </ul>
+
+<h4>API Backend Routes</h4>
+    <ul>
+        <li>http://localhost:3002/api/create-new-task</li>
+        <li>http://localhost:3002/api/get-task-by-state</li>
+        <li>http://localhost:3002/api/promote-task-to-done</li>
     </ul>
 
 ======================= Phase 4 Project: Containerizing API =======================
@@ -226,7 +233,7 @@
             <ul>
                 <li>Build the Node Image: <code>docker build -t backend .</code></li>
                 <li>Start the backend_container: <code>docker run -p 3002:3002 -d --rm --name backend_container backend:latest</code></li>
-                <li>Check backend_container logs (optional): <code>docker logs backend_container</li>
+                <li>Check backend_container logs (optional): <code>docker logs backend_container</code></li>
             </ul>
         </li>
     </ul>
