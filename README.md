@@ -212,32 +212,32 @@
 
 ======================= Phase 4 Project: Containerizing API =======================
 
-   <h4>Objectives of Phase 4:</h4>
+<h4>Objectives of Phase 4:</h4>
     <ul>
-      <li>Understand how to containerize the API using Dockerfile and relevant considerations.</li>
-      <li>Understand how to reduce the size of the container image using a streamlined OS without affecting the function of the delivered API.</li>
+        <li>Understand how to containerize the API using Dockerfile and relevant considerations.</li>
+        <li>Understand how to reduce the size of the container image using a streamlined OS without affecting the function of the delivered API.</li>
     </ul>
 
-  <h4>Phase 4 Tasks</h4>
-  <ul>
-    <li>Created a docker-compose file to connect the frontend, backend and server in the same network.
-    </li>
-    <li>Assuming the user has MySQL workbench installed on the localhost machine, to run the backend API on POSTMAN, run the following commands:
-      <ul>
-        <li>Build the Node Image: <code>docker build -t backend .</code></li>
-        <li>Start the backend_container: <code>docker run -p 3002:3002 -d --rm --name backend_container backend:latest</code></li>
-        <li>Check backend_container logs (optional): <code>docker logs backend_container</li>
-      </ul>
-    </li>
-  </ul>
+<h4>Phase 4 Tasks</h4>
+    <ul>
+        <li>Created a docker-compose file to connect the frontend, backend and server in the same network.
+        </li>
+        <li>Assuming the user has MySQL workbench installed on the localhost machine, to run the backend API on POSTMAN, run the following commands:
+            <ul>
+                <li>Build the Node Image: <code>docker build -t backend .</code></li>
+                <li>Start the backend_container: <code>docker run -p 3002:3002 -d --rm --name backend_container backend:latest</code></li>
+                <li>Check backend_container logs (optional): <code>docker logs backend_container</li>
+            </ul>
+        </li>
+    </ul>
     
 ======================= Areas of Improvement =======================
-   <h4>Areas of Improvement</h4>
+<h4>Areas of Improvement</h4>
     <ul>
-      <li>Implement more advanced React Hooks</li>
-      <li>Editable Table in Phase 1</li>
-      <li>
+        <li>Implement more advanced React Hooks</li>
+        <li>Editable Table in Phase 1</li>
+        <li>
         Add state dependencies in useEffect to minimise refreshing of the browser.
         <i>Note: This will be implemented in Phase 2 of the project : Task Management Features</i>
-      </li>
+        </li>
     </ul>
