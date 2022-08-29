@@ -236,6 +236,14 @@
                 <li>Check backend_container logs (optional): <code>docker logs backend_container</code></li>
             </ul>
         </li>
+        <li>Transfer file via an airgap environment (NO Internet Access) using MD5 checksum
+          <ul>
+            <li>Saving in a <i>.tar</i> file: <code>docker save -o secret.tar (image-name)</code></li>
+            <li>Loading the <i>.tar</i> file: <code>docker load -i secret.tar</code></li>
+            <li>Check SHA256: <code>Get-FileHash secret.tar</code></li>
+            <li>Check MD5: <code>Get-FileHash secret.tar -Algorithm MD5</code></li>
+          </ul>
+        </li>
     </ul>
     
 ======================= Areas of Improvement =======================
@@ -248,3 +256,11 @@
         <i>Note: This will be implemented in Phase 2 of the project : Task Management Features</i>
         </li>
     </ul>
+
+
+|h1|h2|h3|
+|:---:|:---:|:---:|
+|c1|c2|c3|
+
+`hello world`
+

@@ -10,3 +10,8 @@ docker-compose up
 docker-compose up -d
 docker-compose down
 docker logs <container-name>
+
+-- Enter Container Interactive Shell (Linux)
+docker exec -it backend_container sh
+du
+du -sh
