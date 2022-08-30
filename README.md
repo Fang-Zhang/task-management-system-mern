@@ -228,6 +228,10 @@
 <h4>Phase 4 Tasks</h4>
     <ul>
         <li>Created a docker-compose file to connect the frontend, backend and server in the same network.
+          <ul>
+            <li><code>docker-compose up -d</code></li>
+            <li><code>docker-compose down</code></li>>
+          </ul>
         </li>
         <li>Assuming the user has MySQL workbench installed on the localhost machine, to run the backend API on POSTMAN, run the following commands:
             <ul>
@@ -242,6 +246,7 @@
             <li>Loading the <i>.tar</i> file: <code>docker load -i secret.tar</code></li>
             <li>Check SHA256: <code>Get-FileHash secret.tar</code></li>
             <li>Check MD5: <code>Get-FileHash secret.tar -Algorithm MD5</code></li>
+            <li>Compare MD5: <code>(Get-FileHash secret.tar -Algorithm MD5).hash -eq (cat secret.txt)</code></li>
           </ul>
         </li>
     </ul>
@@ -256,11 +261,3 @@
         <i>Note: This will be implemented in Phase 2 of the project : Task Management Features</i>
         </li>
     </ul>
-
-
-|h1|h2|h3|
-|:---:|:---:|:---:|
-|c1|c2|c3|
-
-`hello world`
-
