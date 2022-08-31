@@ -12,6 +12,7 @@ import AdminDatabaseTable from "./components/AdminDatabaseTable";
 import AdminUpdateUserGroup from "./components/AdminUpdateUserGroup";
 import AdminCreateUserGroup from "./components/AdminCreateUserGroup";
 import KanbanBoard from "./components/KanbanBoard";
+import ProtectedRoutes from "./components/ProtectedRoutes"
 
 // Beginning portion of url for all REQUEST:
 // Axios.defaults.baseURL = "http://backend:3000";
@@ -25,15 +26,17 @@ function App() {
       <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Routes>
         <Route path="/" element={loggedIn ? <HomePage userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} /> : <></>} />
-        <Route path="/homepage/user-management" element={<TeamUserMgmt />} />
-        <Route path="/haha" element={<AdminDatabaseTable />} />
-        <Route path="/homepage" element={<HomePage />} />
-        <Route path="/homepage/admin-user-management" element={<AdminAddUpdateUser />} />
-        <Route path="/homepage/admin-group-management" element={<AdminCreateUserGroup />} />
-        <Route path="/AdminDatabaseTable" element={<AdminDatabaseTable />} />
-        <Route path="/AdminUpdateUserGroup" element={<AdminUpdateUserGroup />} />
-        <Route path="/homepage/kanban-board/:appAcronym" element={<KanbanBoard />} />
-        <Route path="*" element={<div>Page 404! There's nothing here!</div>} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/homepage/user-management" element={<TeamUserMgmt />} />
+          <Route path="/haha" element={<AdminDatabaseTable />} />
+          <Route path="/homepage" element={<HomePage />} />
+          <Route path="/homepage/admin-user-management" element={<AdminAddUpdateUser />} />
+          <Route path="/homepage/admin-group-management" element={<AdminCreateUserGroup />} />
+          <Route path="/AdminDatabaseTable" element={<AdminDatabaseTable />} />
+          <Route path="/AdminUpdateUserGroup" element={<AdminUpdateUserGroup />} />
+          <Route path="/homepage/kanban-board/:appAcronym" element={<KanbanBoard />} />
+          <Route path="*" element={<h1 style={{textAlign:"center", color: "blue"}}>Page 404! There's nothing here!</h1>} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

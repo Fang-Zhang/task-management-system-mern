@@ -15,6 +15,7 @@ function LoggedOut(props) {
       clearError();
 
       if (response.data) {
+        console.log(response.data)
         sessionStorage.setItem("stenggUsername", response.data.username);
         props.setLoggedIn(true);
       }
