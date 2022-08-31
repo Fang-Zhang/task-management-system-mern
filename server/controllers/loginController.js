@@ -29,7 +29,8 @@ const login_page = (req, res, next) => {
             if (result[0].isActive === "Active") {
               let user = {username}
               const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
-              let jsonData = { username, accessToken };
+              const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET)
+              let jsonData = { username, accessToken, refreshToken };
               res.send(JSON.stringify(jsonData));
             } else {
               return next(new ErrorHandler("Your account has been disabled. Please look for an admin!"));
