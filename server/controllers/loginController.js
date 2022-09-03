@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const ErrorHandler = require("../error/errorHandler");
 const con = require("../config/database");
-const jwt = require("jsonwebtoken")
+const generateToken = require("../jwt/generateToken");
 require("dotenv").config();
 
 const login_page = (req, res, next) => {
@@ -27,11 +27,8 @@ const login_page = (req, res, next) => {
           if (validPass) {
             // Checking if account if Active
             if (result[0].isActive === "Active") {
-              let user = {username}
-              const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
-              const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET)
-              let jsonData = { username, accessToken, refreshToken };
-              res.send(JSON.stringify(jsonData));
+              const accessToken = await generateToken({ username });
+              res.send(JSON.stringify({ username, accessToken }));
             } else {
               return next(new ErrorHandler("Your account has been disabled. Please look for an admin!"));
             }

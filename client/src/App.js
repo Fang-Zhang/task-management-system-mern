@@ -12,13 +12,13 @@ import AdminDatabaseTable from "./components/AdminDatabaseTable";
 import AdminUpdateUserGroup from "./components/AdminUpdateUserGroup";
 import AdminCreateUserGroup from "./components/AdminCreateUserGroup";
 import KanbanBoard from "./components/KanbanBoard";
-import ProtectedRoutes from "./components/ProtectedRoutes"
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 // Beginning portion of url for all REQUEST:
 // Axios.defaults.baseURL = "http://backend:3000";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(Boolean(sessionStorage.getItem("stenggUsername")));
+  const [loggedIn, setLoggedIn] = useState(Boolean(sessionStorage.getItem("accessToken")));
   const [userLoggedIn, setUserLoggedIn] = useState("");
 
   return (
@@ -35,7 +35,7 @@ function App() {
           <Route path="/AdminDatabaseTable" element={<AdminDatabaseTable />} />
           <Route path="/AdminUpdateUserGroup" element={<AdminUpdateUserGroup />} />
           <Route path="/homepage/kanban-board/:appAcronym" element={<KanbanBoard />} />
-          <Route path="*" element={<h1 style={{textAlign:"center", color: "blue"}}>Page 404! There's nothing here!</h1>} />
+          <Route path="*" element={<h1 style={{ textAlign: "center", color: "blue" }}>Page 404! There's nothing here!</h1>} />
         </Route>
       </Routes>
     </BrowserRouter>
