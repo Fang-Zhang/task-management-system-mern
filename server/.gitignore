@@ -22,6 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.env
-backend.env
-mysql.env
+/.env
+/env/backend.env
+/env/mysql.env
