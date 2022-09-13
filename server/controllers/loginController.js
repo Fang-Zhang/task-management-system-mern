@@ -22,8 +22,6 @@ const login_page = (req, res, next) => {
         // Checking if username exists in database
         else if (result.length > 0) {
           const validPass = await bcrypt.compare(password, result[0].password);
-
-          // Checking if password matches
           if (validPass) {
             // Checking if account if Active
             if (result[0].isActive === "Active") {
